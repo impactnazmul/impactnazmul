@@ -5,8 +5,15 @@ import BanglaLayout from '../../layouts/BanglaLayout.astro'
 <BanglaLayout title='মোঃ নাজমূল হুদা'>
   <main>
     <div class='hero-text'>
-      আমি <h1>মোঃ নাজমূল হুদা</h1>। আমি ১১-বছরের বেশি সময় ধরে আর্থ-সামাজিক
-      উন্নয়নের জন্য কাজ করে যাচ্ছি।
+      আমি <h1>মোঃ নাজমূল হুদা</h1>, একজন কমনওয়েলথ স্কলার। আর্থ-সামাজিক উন্নয়ন
+      খাতে আমার ১১ বছরের বেশি কাজের অভিজ্ঞতা আছে। পানি, পয়ঃনিষ্কাশন,
+      স্বাস্থ্যবিধি, জলবায়ু পরিবর্তন, জনস্বাস্থ্য, পুষ্টি এবং মানবিক সহায়তা
+      কার্যক্রমে উদ্যোক্তা/ব্যবসা উন্নয়ন, কমিউনিটি সম্পৃক্ততা এবং অর্থনৈতিক
+      মডেলিং নিয়ে আমি কাজ করেছি। <em
+        >এছাড়াও, নবায়নযোগ্য জ্বালানি প্রকল্পের জন্য দীর্ঘমেয়াদি বাণিজ্যিক মডেল
+        তৈরি করি, বিশেষ করে বর্জ্য থেকে জ্বালানি উৎপাদনের ধারণাগুলো নিয়ে আমার
+        বিশেষ আগ্রহ রয়েছে।</em
+      >
     </div>
   </main>
 </BanglaLayout>
@@ -19,12 +26,13 @@ import BanglaLayout from '../../layouts/BanglaLayout.astro'
   .hero-text {
     width: 100%;
     max-width: 40ch;
-    font-size: 1.6rem;
+    font-size: 1.6em;
     margin-block-start: 2rem;
   }
 
-  .hero-text > h1 {
+  .hero-text h1 {
     display: inline-block;
-    font-weight: 450;
+    font-size: inherit;
+    font-weight: 550;
   }
 </style>

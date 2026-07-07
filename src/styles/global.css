@@ -3,60 +3,37 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  padding: 0;
 }
 
 :root {
   font-size: 1.125rem;
 }
 
-:lang(en) {
+html:lang(en),
+[lang|='en'] {
   font-family: 'Rubik', sans-serif;
+  font-weight: 350;
 }
 
-:lang(bn) {
+html:lang(bn),
+[lang|='bn'] {
   font-family: 'Noto Serif Bengali', serif;
+  font-weight: 400;
   font-variation-settings: 'wdth' 100;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Scale the whole Bengali page */
+html:lang(bn) {
+  font-size: calc(1.125rem * 1.1);
 }
 
-body {
-  width: 100vw;
-  min-width: 18rem;
-  min-height: 100vh;
-  line-height: 1.5;
-  font-optical-sizing: auto;
-  font-weight: 350;
-  font-style: normal;
-  text-rendering: optimizeSpeed;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: inherit;
-}
-
-em {
-  font-style: italic;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+/* Scale explicit Bengali blocks inside another language page */
+body :not(html)[lang|='bn'] {
+  font-size: 1.1em;
 }
 
 input,
@@ -90,10 +67,7 @@ a:active {
 ul,
 ol {
   list-style: none;
-}
-
-strong {
-  font-weight: 450;
+  padding: 0;
 }
 
 table {
@@ -109,10 +83,38 @@ textarea {
   outline: none;
 }
 
-/* Keep keyboard accessibility */
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+}
+
+strong,
+em {
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
 }
 
 /* Header and Footer */
@@ -121,6 +123,16 @@ footer {
   width: 95%;
   max-width: 60rem;
   margin-inline: auto;
+}
+
+/* Body */
+body {
+  min-width: 18rem;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-rendering: optimizeSpeed;
 }
 
 /* Main */

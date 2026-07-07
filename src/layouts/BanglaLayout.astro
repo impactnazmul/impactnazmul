@@ -1,9 +1,12 @@
 ---
+import '../styles/languagelayout.css'
 import BaseLayout from './BaseLayout.astro'
 
 const { title } = Astro.props as { title: string }
 
-const mailSubject = 'ওয়েবসাইট থেকে সরাসরি মোঃ নাজমূল হুদাকে মেইল করছি'
+const mailSubject = encodeURIComponent(
+  'ওয়েবসাইট থেকে সরাসরি মোঃ নাজমূল হুদাকে মেইল করছি'
+)
 ---
 
 <BaseLayout
@@ -11,11 +14,11 @@ const mailSubject = 'ওয়েবসাইট থেকে সরাসরি �
   {title}
 >
   <header>
-    <nav>
+    <nav aria-label='Primary navigation'>
       <a
         id='header-home'
         href='/bn'
-        >মোঃ নাজমূল হুদা</a
+        ><strong>মোঃ নাজমূল হুদা</strong></a
       >
       <div id='header-menu'>
         <a href='/bn/blog'>ব্লগ</a>
@@ -30,22 +33,3 @@ const mailSubject = 'ওয়েবসাইট থেকে সরাসরি �
     <a href='/bn'>মোঃ নাজমূল হুদা</a>
   </footer>
 </BaseLayout>
-
-<style>
-  nav {
-    margin-block: 0.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #header-home {
-    font-size: 1.25rem;
-    font-weight: 450;
-  }
-
-  #header-menu {
-    display: flex;
-    gap: 1rem;
-  }
-</style>

@@ -5,26 +5,32 @@ import EnglishLayout from '../layouts/EnglishLayout.astro'
 <EnglishLayout title='Md. Nazmul Huda'>
   <main>
     <div class='hero-text'>
-      I am <h1>Md. Nazmul Huda</h1>. I have been working for socio-economic
-      development for more than 11-years.
+      I am <h1>Md. Nazmul Huda</h1>, a Commonwealth Scholar with more than 11
+      years of experience in socio-economic development. My work spans
+      enterprise development, community engagement and economic modelling across
+      water, sanitation, hygiene, climate change, public health, nutrition and
+      humanitarian interventions. <em
+        >I also develop long-term commercial models for renewable energy
+        projects, with a particular interest in waste-to-energy ideas.</em
+      >
     </div>
   </main>
+
+  <style>
+    main {
+      max-width: 55rem;
+    }
+
+    .hero-text {
+      width: 100%;
+      max-width: 40ch;
+      font-size: 1.6rem;
+      margin-block-start: 2rem;
+    }
+
+    .hero-text > h1 {
+      display: inline-block;
+      font-weight: 400;
+    }
+  </style>
 </EnglishLayout>
-
-<style>
-  main {
-    max-width: 55rem;
-  }
-
-  .hero-text {
-    width: 100%;
-    max-width: 40ch;
-    font-size: 1.6rem;
-    margin-block-start: 2rem;
-  }
-
-  .hero-text > h1 {
-    display: inline-block;
-    font-weight: 450;
-  }
-</style>
