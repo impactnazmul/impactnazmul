@@ -3,5 +3,28 @@ import EnglishLayout from '../layouts/EnglishLayout.astro'
 ---
 
 <EnglishLayout title='Md. Nazmul Huda'>
-  <h1>Md. Nazmul Huda</h1>
+  <main>
+    <div class='hero-text'>
+      I am <h1>Md. Nazmul Huda</h1>. I have been working for socio-economic
+      development for more than 11-years.
+    </div>
+  </main>
 </EnglishLayout>
+
+<style>
+  main {
+    max-width: 55rem;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 40ch;
+    font-size: 1.6rem;
+    margin-block-start: 2rem;
+  }
+
+  .hero-text > h1 {
+    display: inline-block;
+    font-weight: 450;
+  }
+</style>

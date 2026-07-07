@@ -7,6 +7,16 @@ const { lang, title } = Astro.props as { lang: 'en' | 'bn'; title: string }
 <html lang={lang}>
   <head>
     <meta charset='utf-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+
+    <!-- ICON -->
     <link
       rel='icon'
       type='image/svg+xml'
@@ -16,14 +26,9 @@ const { lang, title } = Astro.props as { lang: 'en' | 'bn'; title: string }
       rel='icon'
       href='/favicon.ico'
     />
-    <meta
-      name='viewport'
-      content='width=device-width'
-    />
-    <meta
-      name='generator'
-      content={Astro.generator}
-    />
+    <!-- ICON -->
+
+    <!-- FONT -->
     <link
       rel='preconnect'
       href='https://fonts.googleapis.com'
@@ -37,6 +42,8 @@ const { lang, title } = Astro.props as { lang: 'en' | 'bn'; title: string }
       href='https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'
       rel='stylesheet'
     />
+    <!-- FONT -->
+
     <title>{title}</title>
   </head>
   <body>

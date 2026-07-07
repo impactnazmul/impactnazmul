@@ -7,24 +7,47 @@
   padding: 0;
 }
 
+:root {
+  font-size: 1.125rem;
+}
+
+:lang(en) {
+  font-family: 'Rubik', sans-serif;
+}
+
+:lang(bn) {
+  font-family: 'Noto Serif Bengali', serif;
+  font-variation-settings: 'wdth' 100;
+}
+
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
 
 body {
+  width: 100vw;
+  min-width: 18rem;
   min-height: 100vh;
   line-height: 1.5;
-  font-family: 'Rubik', system-ui, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 350;
   font-style: normal;
   text-rendering: optimizeSpeed;
 }
 
-:lang(bn) {
-  font-family: 'Noto Serif Bengali', 'Rubik', system-ui, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
 }
 
 img,
@@ -55,9 +78,22 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus {
+  cursor: pointer;
+}
+
+a:active {
+  cursor: progress;
+}
+
 ul,
 ol {
   list-style: none;
+}
+
+strong {
+  font-weight: 450;
 }
 
 table {
@@ -77,4 +113,20 @@ textarea {
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+
+/* Header and Footer */
+header,
+footer {
+  width: 95%;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+/* Main */
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-block: 4rem;
 }

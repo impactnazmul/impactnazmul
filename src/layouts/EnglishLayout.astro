@@ -2,11 +2,50 @@
 import BaseLayout from './BaseLayout.astro'
 
 const { title } = Astro.props as { title: string }
+
+const mailSubject = 'Mailing directly to Md. Nazmul Huda from website'
 ---
 
 <BaseLayout
   lang='en'
   {title}
 >
+  <header>
+    <nav>
+      <a
+        id='header-home'
+        href='/'
+        >Md. Nazmul Huda</a
+      >
+      <div id='header-menu'>
+        <a href='/blog'>Blog</a>
+        <a href={`mailto:me@nazmul-huda.com?subject=${mailSubject}`}>Email</a>
+      </div>
+    </nav>
+  </header>
   <slot />
+  <footer>
+    &copy; {new Date().getFullYear()}
+    {' '}
+    <a href='/'>Md. Nazmul Huda</a>
+  </footer>
 </BaseLayout>
+
+<style>
+  nav {
+    margin-block: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #header-home {
+    font-size: 1.25rem;
+    font-weight: 450;
+  }
+
+  #header-menu {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

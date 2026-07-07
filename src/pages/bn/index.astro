@@ -3,5 +3,28 @@ import BanglaLayout from '../../layouts/BanglaLayout.astro'
 ---
 
 <BanglaLayout title='মোঃ নাজমূল হুদা'>
-  <h1>মোঃ নাজমূল হুদা</h1>
+  <main>
+    <div class='hero-text'>
+      আমি <h1>মোঃ নাজমূল হুদা</h1>। আমি ১১-বছরের বেশি সময় ধরে আর্থ-সামাজিক
+      উন্নয়নের জন্য কাজ করে যাচ্ছি।
+    </div>
+  </main>
 </BanglaLayout>
+
+<style>
+  main {
+    max-width: 55rem;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 40ch;
+    font-size: 1.6rem;
+    margin-block-start: 2rem;
+  }
+
+  .hero-text > h1 {
+    display: inline-block;
+    font-weight: 450;
+  }
+</style>
