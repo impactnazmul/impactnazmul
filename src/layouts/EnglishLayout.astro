@@ -1,0 +1,43 @@
+---
+import '../styles/languagelayout.css'
+import BaseLayout from './BaseLayout.astro'
+
+const { title } = Astro.props as { title?: string }
+
+const mailSubject = encodeURIComponent(
+  'Mailing directly to Md. Nazmul Huda from website'
+)
+---
+
+<BaseLayout
+  lang='en'
+  title={title ? `${title} · Md. Nazmul Huda` : 'Md. Nazmul Huda'}
+>
+  <header>
+    <nav aria-label='Primary navigation'>
+      <a
+        id='header-home'
+        href='/'
+        ><strong>Md. Nazmul Huda</strong></a
+      >
+      <div id='header-menu'>
+        <a href='/blog'>Blog</a>
+        <a href={`mailto:me@nazmul-huda.com?subject=${mailSubject}`}>Email</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <p>
+      &copy; {new Date().getFullYear()}
+      {' '}
+      <a href='/'>Md. Nazmul Huda</a>
+    </p>
+    <nav>
+      <a href='/blog'>Blog</a>
+      <a href={`mailto:me@nazmul-huda.com?subject=${mailSubject}`}>Email</a>
+    </nav>
+  </footer>
+</BaseLayout>
