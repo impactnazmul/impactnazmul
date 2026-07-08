@@ -117,6 +117,16 @@ em {
   font-style: italic;
 }
 
+html:lang(en) strong,
+[lang|='en'] strong {
+  font-weight: 450;
+}
+
+html:lang(bn) strong,
+[lang|='bn'] strong {
+  font-weight: 600;
+}
+
 /* Header and Footer */
 header,
 footer {

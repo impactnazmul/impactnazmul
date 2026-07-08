@@ -2,7 +2,7 @@
 import '../styles/languagelayout.css'
 import BaseLayout from './BaseLayout.astro'
 
-const { title } = Astro.props as { title: string }
+const { title } = Astro.props as { title?: string }
 
 const mailSubject = encodeURIComponent(
   'ওয়েবসাইট থেকে সরাসরি মোঃ নাজমূল হুদাকে মেইল করছি'
@@ -11,7 +11,7 @@ const mailSubject = encodeURIComponent(
 
 <BaseLayout
   lang='bn'
-  {title}
+  title={title ? `${title} · মোঃ নাজমূল হুদা` : 'মোঃ নাজমূল হুদা'}
 >
   <header>
     <nav aria-label='Primary navigation'>
@@ -26,10 +26,18 @@ const mailSubject = encodeURIComponent(
       </div>
     </nav>
   </header>
-  <slot />
+  <main>
+    <slot />
+  </main>
   <footer>
-    &copy; {new Date().toLocaleDateString('bn-BD', { year: 'numeric' })}
-    {' '}
-    <a href='/bn'>মোঃ নাজমূল হুদা</a>
+    <p>
+      &copy; {new Date().toLocaleDateString('bn-BD', { year: 'numeric' })}
+      {' '}
+      <a href='/bn'>মোঃ নাজমূল হুদা</a>
+    </p>
+    <nav>
+      <a href='/bn/blog'>ব্লগ</a>
+      <a href={`mailto:me@nazmul-huda.com?subject=${mailSubject}`}>ইমেইল</a>
+    </nav>
   </footer>
 </BaseLayout>
